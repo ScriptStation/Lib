@@ -19,21 +19,9 @@ Tab:AddButton({
   	end
 })
 Tab:AddButton({
-	Name = "Alysee",
-	Callback = function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/ScriptStation/Lib/main/Alysee"))()
-  	end
-})
-Tab:AddButton({
 	Name = "Arceus Fly",
 	Callback = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/ScriptStation/Lib/main/ArceusAIM"))()
-  	end
-})
-Tab:AddButton({
-	Name = "ArceusAIM",
-	Callback = function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/ScriptStation/Lib/main/Arceusaim"))()
   	end
 })
 Tab:AddButton({
