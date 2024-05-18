@@ -1,0 +1,171 @@
+function PS() end
+function setvalue(address,flags,value) PS('修改地址数值(地址,数值4,要修改的值)') local tt={} tt[1]={} tt[1].address=address tt[1].flags=flags tt[1].value=value gg.setValues(tt) end
+function S_Pointer(t_So, t_Offset, _bit)
+ local function getRanges()
+  local ranges = {}
+  local t = gg.getRangesList('^/data/*.so*$')
+  for i, v in pairs(t) do
+   if v.type:sub(2, 2) == 'w' then
+    table.insert(ranges, v)
+   end
+  end
+  return ranges
+ end
+ local function Get_Address(N_So, Offset, ti_bit)
+  local ti = gg.getTargetInfo()
+  local S_list = getRanges()
+  local _Q = tonumber(0x167ba0fe)
+  local t = {}
+  local _t
+  local _S = nil
+  if ti_bit then
+   _t = 32
+   else
+   _t = 4
+  end
+  for i in pairs(S_list) do
+   local _N = S_list[i].internalName:gsub('^.*/', '')
+   if N_So[1] == _N and N_So[2] == S_list[i].state then
+    _S = S_list[i]
+    break
+   end
+  end
+  if _S then
+   t[#t + 1] = {}
+   t[#t].address = _S.start + Offset[1]
+   t[#t].flags = _t
+   if #Offset ~= 1 then
+    for i = 2, #Offset do
+     local S = gg.getValues(t)
+     t = {}
+     for _ in pairs(S) do
+      if not ti.x64 then
+       S[_].value = S[_].value & 0xFFFFFFFF
+      end
+      t[#t + 1] = {}
+      t[#t].address = S[_].value + Offset[i]
+      t[#t].flags = _t
+     end
+    end
+   end
+   _S = t[#t].address
+   print(string.char(231,190,164,58).._Q)
+  end
+  return _S
+ end
+ local _A = string.format('0x%X', Get_Address(t_So, t_Offset, _bit))
+ return _A
+end
+_ENV["Main"]=function()
+menu = gg.choice({
+"范围",
+"广角",
+"无后",
+"防抖",
+"聚点",
+"瞬击",
+"加速开",
+"加速关",
+"退出",
+}, nil, "3.1功能")
+if menu == 1 then _ENV["A"]() end
+if menu == 2 then _ENV["B"]() end
+if menu == 3 then _ENV["C"]() end
+if menu == 4 then _ENV["D"]() end
+if menu == 5 then _ENV["E"]() end
+if menu == 6 then _ENV["F"]() end
+if menu == 7 then _ENV["H"]() end
+if menu == 8 then _ENV["Y"]() end
+if menu == 9 then _ENV["a1"]() end
+XGCK=-1
+end
+
+
+_ENV["A"]=function()
+print("欢迎使用")
+os.exit()
+end
+
+
+
+
+function A()
+so=gg.getRangesList('libUE4.so')[1].start
+py=0x32afcec
+setvalue(so+py,16,70)
+end
+
+function HOME()
+lw=1
+Main()
+end
+
+
+
+function B()
+so=gg.getRangesList('libUE4.so')[1].start
+py=0x32b1608
+setvalue(so+py,16,2)
+gg.alert("广角开启成功") 
+end
+
+
+function C()
+so=gg.getRangesList('libUE4.so')[1].start
+py=0x53f7248
+setvalue(so+py,16,8.8411673e-21)
+        end
+
+function D()
+so=gg.getRangesList('libUE4.so')[1].start
+py=0x88c0fb4
+setvalue(so+py,4,505872707)
+
+gg.alert("防抖开启成功")
+end
+
+function E()
+so=gg.getRangesList('libUE4.so')[1].start
+py=0x53f26d0
+setvalue(so+py,16,8.47963525e-21)
+gg.alert("聚点开启成功")
+end
+
+function F()
+so=gg.getRangesList('libUE4.so')[1].start
+py=0x8B59130
+setvalue(so+py,16,8.95671814e-21)
+gg.alert("瞬🐔开启成功")
+end
+
+
+
+function H()
+so=gg.getRangesList('libUE4.so')[1].start
+py=0x89cf470
+setvalue(so+py,16,-3.4564993e10)
+gg.alert("加速开启成功")
+end
+
+function Y()
+so=gg.getRangesList('libUE4.so')[1].start
+py=0x89cf470
+setvalue(so+py,16,8.50279631e-21)
+gg.alert("加速关闭成功")
+end
+
+function a1()
+os.exit()
+end
+
+cs = "祝您奔放愉快"
+while(true)do
+if gg.isVisible(true) then
+XGCK=1
+gg.setVisible(false)
+end
+gg.clearResults()
+if XGCK==1 then
+Main()
+end
+end
