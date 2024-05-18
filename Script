@@ -1,0 +1,81 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/RScriptz/RobloxScripts/main/OrionLibKeybind.lua')))()
+
+local Window = OrionLib:MakeWindow({
+    Name = "CustomUI",
+    HidePremium = false,
+    SaveConfig = true,
+    ConfigFolder = "OrionTest",
+    IntroText = "R-Exploit制作"
+})
+local Tab = Window:MakeTab({
+    Name = "主要",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+Tab:AddButton({
+	Name = "DEFL100+",
+	Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/ScriptStation/Lib/main/100%2B"))()
+  	end
+})
+Tab:AddButton({
+	Name = "Alysee",
+	Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/ScriptStation/Lib/main/Alysee"))()
+  	end
+})
+Tab:AddButton({
+	Name = "Arceus Fly",
+	Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/ScriptStation/Lib/main/ArceusAIM"))()
+  	end
+})
+Tab:AddButton({
+	Name = "ArceusAIM",
+	Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/ScriptStation/Lib/main/Arceusaim"))()
+  	end
+})
+Tab:AddButton({
+	Name = "CubiX",
+	Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/ScriptStation/Lib/main/Cubix"))()
+  	end
+})
+Tab:AddButton({
+	Name = "Hydrogen v1.3.9",
+	Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/ScriptStation/Lib/main/HydrogenV1.3.9"))()
+  	end
+})
+Tab:AddButton({
+	Name = "TrigonEvo",
+	Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/ScriptStation/Lib/main/Trigon"))()
+  	end
+})
+Tab:AddButton({
+	Name = "无敌",
+	Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/ScriptStation/Lib/main/Wudi"))()
+  	end
+})
+Tab:AddButton({
+	Name = "KatoExec",
+	Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/ScriptStation/Lib/main/kato"))()
+  	end
+})
+Tab:AddButton({
+	Name = "Kickplayer",
+	Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/ScriptStation/Lib/main/kickplayer"))()
+  	end
+})
+Tab:AddButton({
+	Name = "Codex",
+	Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/ScriptStation/Lib/main/xhh"))()
+  	end
+})
+OrionLib:Init()
