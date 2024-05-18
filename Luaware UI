@@ -1,0 +1,53 @@
+local NotificationHolder = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Module.Lua"))() 
+ local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Client.Lua"))() 
+
+ wait(1) 
+ Notification:Notify( 
+     {Title = "猫", Description = "正在加载"}, 
+     {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 5, Type = "image"}, 
+     {Image = "http://www.roblox.com/asset/?id=4483345998", ImageColor = Color3.fromRGB(255, 84, 84)} 
+ ) 
+ wait(2) 
+ Notification:Notify( 
+     {Title = "猫", Description = "准备好了！"}, 
+     {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 5, Type = "image"}, 
+     {Image = "http://www.roblox.com/asset/?id=4483345998", ImageColor = Color3.fromRGB(255, 84, 84)} 
+ )
+ wait(0.9)
+ 
+local Cloudlib = loadstring(game:HttpGet("https://gist.githubusercontent.com/XiaoYunCN/c212174d6263d5a43e95a59110a2724b/raw/c89c61fa5c8149a2554b66f618a32cd3e4d42877/gistfile1.txt", true))()
+
+local window = Cloudlib:new("猫脚本制作")
+
+local creds = window:Tab("主要的",'4483345998')
+local Tab2 = creds:section("骗",true)
+
+Tab:Button("纽扣",function()
+
+end)
+
+Tab:Toggle("还是一个开关", "text", false, function(value)
+print("value")
+end)
+
+local Tab = creds:section("UI",true)
+
+Tab:Button("纽扣",function()
+print("Hello")
+end)
+Tab:Toggle("还是一个开关", "text", false, function(value)
+print("value")
+end)
+Tab:Keybind("键绑定", Enum.KeyCode.RightShift, function(Value)
+print("Value")
+end)
+
+Tab:Slider('滑块', '', 16, 16, 250,false, function(value)
+    print("value")
+end)
+
+local creds = window:Tab("功能",'6035145364')
+
+local Tab3 = creds:section("功能区",true)
+
+Tab3:Label("通知")
