@@ -1,0 +1,227 @@
+local OrionLib =
+    loadstring(
+    game:HttpGet(
+        ("https://raw.githubusercontent.com/ionlyusegithubformcmods/1-Line-Scripts/main/Mobile%20Friendly%20Orion")
+    )
+)() --这将加载脚本代码
+local Player = game.Players.LocalPlayer --这将显示玩家姓名
+local Window =
+    OrionLib:MakeWindow(
+    {
+        Name = "注意如何制作手机密钥系统",
+        HidePremium = false,
+        SaveConfig = true,
+        ConfigFolder = "Orion试验",
+        IntroText = "正在加载脚本..."
+    }
+) --这将加载脚本中枢
+
+function MakeScriptHub()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/GhostPlayer352/Test4/main/GhostHub"))() --将密钥正确时将加载的脚本放在此处
+end
+
+OrionLib:MakeNotification(
+    {
+        Name = "已登录！",
+        Content = "你需要密钥" .. Player.Name .. " ",
+        Image = "rbxassetid://4483345998",
+        Time = 5
+    }
+) --通知
+
+getgenv().Key = "密钥" --把正确的密钥放在这里
+getgenv().KeyInput = "隐藏密码" --需要密钥才能可以用
+
+local Tab =
+    Window:MakeTab(
+    {
+        Name = "验证",
+        Icon = "rbxassetid://4483345998",
+        PremiumOnly = false
+    }
+) --制作标签
+
+Tab:AddTextbox(
+    {
+        Name = "密钥",
+        Default = "",
+        TextDisappear = true,
+        Callback = function(Value)
+            getgenv().KeyInput = Value
+        end
+    }
+) --您将在此处输入密钥
+
+Tab:AddButton(
+    {
+        Name = "检查键",
+        Callback = function()
+            if getgenv().KeyInput == getgenv().Key then
+                OrionLib:MakeNotification(
+                    {
+                        Name = "检查键",
+                        Content = "正在检查您输入的密钥",
+                        Image = "rbxassetid://4483345998",
+                        Time = 5
+                    }
+                )
+                wait(2)
+                OrionLib:MakeNotification(
+                    {
+                        Name = "正确的密钥！",
+                        Content = "您输入的密钥是正确的。",
+                        Image = "rbxassetid://4483345998",
+                        Time = 5
+                    }
+                )
+                wait(1)
+                --需要输入脚本
+                OrionLib:Destroy()
+                wait(.3)
+                MakeScriptHub()
+            else
+                OrionLib:MakeNotification(
+                    {
+                        Name = "检查键",
+                        Content = "正在检查您输入的密钥",
+                        Image = "rbxassetid://4483345998",
+                        Time = 5
+                    }
+                )
+                wait(2)
+                OrionLib:MakeNotification(
+                    {
+                        Name = "不正确的密钥！",
+                        Content = "您输入的密钥不正确。",
+                        Image = "rbxassetid://4483345998",
+                        Time = 5
+                    }
+                )
+            end
+        end
+    }
+) --这将检查您输入的密钥
+
+Tab:AddButton(
+    {
+        Name = "获取密钥",
+        Callback = function()
+            setclipboard("将链接放在这里") --这将复制密钥的链接
+        end
+    }
+)
+
+OrionLib:Init() --如果脚本完成，则需要local OrionLib =
+    loadstring(
+    game:HttpGet(
+        ("https://raw.githubusercontent.com/ionlyusegithubformcmods/1-Line-Scripts/main/Mobile%20Friendly%20Orion")
+    )
+)() --这将加载脚本代码
+local Player = game.Players.LocalPlayer --这将显示玩家姓名
+local Window =
+    OrionLib:MakeWindow(
+    {
+        Name = "注意如何制作手机密钥系统",
+        HidePremium = false,
+        SaveConfig = true,
+        ConfigFolder = "Orion试验",
+        IntroText = "正在加载脚本..."
+    }
+) --这将加载脚本中枢
+
+function MakeScriptHub()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/GhostPlayer352/Test4/main/GhostHub"))() --将密钥正确时将加载的脚本放在此处
+end
+
+OrionLib:MakeNotification(
+    {
+        Name = "已登录！",
+        Content = "你需要密钥" .. Player.Name .. " ",
+        Image = "rbxassetid://4483345998",
+        Time = 5
+    }
+) --通知
+
+getgenv().Key = "密钥" --把正确的密钥放在这里
+getgenv().KeyInput = "隐藏密码" --需要密钥才能可以用
+
+local Tab =
+    Window:MakeTab(
+    {
+        Name = "验证",
+        Icon = "rbxassetid://4483345998",
+        PremiumOnly = false
+    }
+) --制作标签
+
+Tab:AddTextbox(
+    {
+        Name = "密钥",
+        Default = "",
+        TextDisappear = true,
+        Callback = function(Value)
+            getgenv().KeyInput = Value
+        end
+    }
+) --您将在此处输入密钥
+
+Tab:AddButton(
+    {
+        Name = "检查键",
+        Callback = function()
+            if getgenv().KeyInput == getgenv().Key then
+                OrionLib:MakeNotification(
+                    {
+                        Name = "检查键",
+                        Content = "正在检查您输入的密钥",
+                        Image = "rbxassetid://4483345998",
+                        Time = 5
+                    }
+                )
+                wait(2)
+                OrionLib:MakeNotification(
+                    {
+                        Name = "正确的密钥！",
+                        Content = "您输入的密钥是正确的。",
+                        Image = "rbxassetid://4483345998",
+                        Time = 5
+                    }
+                )
+                wait(1)
+                --需要输入脚本
+                OrionLib:Destroy()
+                wait(.3)
+                MakeScriptHub()
+            else
+                OrionLib:MakeNotification(
+                    {
+                        Name = "检查键",
+                        Content = "正在检查您输入的密钥",
+                        Image = "rbxassetid://4483345998",
+                        Time = 5
+                    }
+                )
+                wait(2)
+                OrionLib:MakeNotification(
+                    {
+                        Name = "不正确的密钥！",
+                        Content = "您输入的密钥不正确。",
+                        Image = "rbxassetid://4483345998",
+                        Time = 5
+                    }
+                )
+            end
+        end
+    }
+) --这将检查您输入的密钥
+
+Tab:AddButton(
+    {
+        Name = "获取密钥",
+        Callback = function()
+            setclipboard("将链接放在这里") --这将复制密钥的链接
+        end
+    }
+)
+
+OrionLib:Init() --如果脚本完成，则需要
