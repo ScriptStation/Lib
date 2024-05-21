@@ -1614,9 +1614,6 @@ local function TYWPOB_fake_script() -- Kato.Handler
 			progress.Size = UDim2.fromScale((1 - progressFrame.Size.X.Scale) + newSize, 1)
 		end)
 		
-		if err ~= nil then
-			appendfile(LogFile, err)
-		end
 	end
 	
 	
