@@ -12,7 +12,7 @@
 Authed = true
 IntroductionPage.Visible = false
 MainPage.Visible = true
-key = Cracked!
+key = Cracked
 
 
 local Kato = Instance.new("ScreenGui")
@@ -1563,11 +1563,30 @@ local function TYWPOB_fake_script() -- Kato.Handler
 				Method = "GET",
 			})
 	
+			if 1==2 then
+				appendfile(LogFile, response.Body)
+				
+				Notify("Kato", "The key that you entered is invalid or the key is already being used.")
+				KeyBox.Text = "Invalid key"
+				wait(5)
+				KeyBox.Text = "Key"
+	
+				if isfile(KeyFile) then
+					delfile(KeyFile)
+				end
+	
+				return
+			end
+	
 			Authed = true
 			IntroductionPage.Visible = false
 			MainPage.Visible = true
 	
 			Notify("Kato", "Successfully logged in.")
+	
+			if not isfile(KeyFile) then
+				writefile(KeyFile, Key)
+			end
 	
 			local jsonData = HttpService:JSONDecode(response.Body)
 			local timeLeftString = jsonData.time_left
