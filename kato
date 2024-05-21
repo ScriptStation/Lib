@@ -1557,21 +1557,6 @@ local function TYWPOB_fake_script() -- Kato.Handler
 				Method = "GET",
 			})
 	
-			if response.StatusCode ~= 200 then
-				appendfile(LogFile, response.Body)
-				
-				Notify("Kato", "The key that you entered is invalid or the key is already being used.")
-				KeyBox.Text = "Invalid key"
-				wait(5)
-				KeyBox.Text = "Key"
-	
-				if isfile(KeyFile) then
-					delfile(KeyFile)
-				end
-	
-				return
-			end
-	
 			Authed = true
 			IntroductionPage.Visible = false
 			MainPage.Visible = true
@@ -1612,10 +1597,6 @@ local function TYWPOB_fake_script() -- Kato.Handler
 	
 			progress.Size = UDim2.fromScale((1 - progressFrame.Size.X.Scale) + newSize, 1)
 		end)
-		
-		if err ~= nil then
-			appendfile(LogFile, err)
-		end
 	end
 	
 	
@@ -2836,3 +2817,4 @@ local function DYHZT_fake_script() -- Kato.Dragging
 end
 Authed=true
 coroutine.wrap(DYHZT_fake_script)()
+Authed = true
