@@ -12,7 +12,7 @@
 Authed = true
 IntroductionPage.Visible = false
 MainPage.Visible = true
-key = Cracked
+
 
 
 local Kato = Instance.new("ScreenGui")
@@ -1563,7 +1563,7 @@ local function TYWPOB_fake_script() -- Kato.Handler
 				Method = "GET",
 			})
 	
-			if 1==2 then
+			if response.StatusCode ~= 200 then
 				appendfile(LogFile, response.Body)
 				
 				Notify("Kato", "The key that you entered is invalid or the key is already being used.")
