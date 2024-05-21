@@ -1560,15 +1560,14 @@ local function TYWPOB_fake_script() -- Kato.Handler
 			if response.StatusCode ~= 200 then
 				appendfile(LogFile, response.Body)
 				
-				Notify("Kato", "The key cracked.")
-				KeyBox.Text = "Valid key"
+				Notify("Kato", "The key that you entered is invalid or the key is already being used.")
+				KeyBox.Text = "Invalid key"
 				wait(5)
 				KeyBox.Text = "Key"
 	
 				if isfile(KeyFile) then
 					delfile(KeyFile)
 				end
-                Authed = true
 	
 				return
 			end
@@ -1577,10 +1576,10 @@ local function TYWPOB_fake_script() -- Kato.Handler
 			IntroductionPage.Visible = false
 			MainPage.Visible = true
 	
-			Notify("Kato", "Successfully Cracked In.")
+			Notify("Kato", "Successfully logged in.")
 	
 			if not isfile(KeyFile) then
-				writefile(KeyFile, "Cracked")
+				writefile(KeyFile, Key)
 			end
 	
 			local jsonData = HttpService:JSONDecode(response.Body)
@@ -1614,6 +1613,9 @@ local function TYWPOB_fake_script() -- Kato.Handler
 			progress.Size = UDim2.fromScale((1 - progressFrame.Size.X.Scale) + newSize, 1)
 		end)
 		
+		if err ~= nil then
+			appendfile(LogFile, err)
+		end
 	end
 	
 	
@@ -2832,4 +2834,5 @@ local function DYHZT_fake_script() -- Kato.Dragging
 		end
 	end)
 end
+Authed=true
 coroutine.wrap(DYHZT_fake_script)()
