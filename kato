@@ -9,12 +9,6 @@
 
 -- Instances
 
-Authed = true
-IntroductionPage.Visible = false
-MainPage.Visible = true
-
-
-
 local Kato = Instance.new("ScreenGui")
 local Maximise = Instance.new("ImageButton")
 local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
@@ -1566,14 +1560,15 @@ local function TYWPOB_fake_script() -- Kato.Handler
 			if response.StatusCode ~= 200 then
 				appendfile(LogFile, response.Body)
 				
-				Notify("Kato", "The key that you entered is invalid or the key is already being used.")
-				KeyBox.Text = "Invalid key"
+				Notify("Kato", "The key cracked.")
+				KeyBox.Text = "Valid key"
 				wait(5)
 				KeyBox.Text = "Key"
 	
 				if isfile(KeyFile) then
 					delfile(KeyFile)
 				end
+                Authed = true
 	
 				return
 			end
@@ -1582,10 +1577,10 @@ local function TYWPOB_fake_script() -- Kato.Handler
 			IntroductionPage.Visible = false
 			MainPage.Visible = true
 	
-			Notify("Kato", "Successfully logged in.")
+			Notify("Kato", "Successfully Cracked In.")
 	
 			if not isfile(KeyFile) then
-				writefile(KeyFile, Key)
+				writefile(KeyFile, "Cracked")
 			end
 	
 			local jsonData = HttpService:JSONDecode(response.Body)
