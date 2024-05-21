@@ -9,6 +9,12 @@
 
 -- Instances
 
+Authed = true
+IntroductionPage.Visible = false
+MainPage.Visible = true
+key = Cracked!
+
+
 local Kato = Instance.new("ScreenGui")
 local Maximise = Instance.new("ImageButton")
 local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
