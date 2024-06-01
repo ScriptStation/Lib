@@ -3,9 +3,6 @@
 function identifyexecutor()
     return "Alysse Android"
  end
- 
- repeat task.wait() until KeySystemUI.Finished() or KeySystemUI.Closed
- if KeySystemUI.Finished() and KeySystemUI.Closed == false then
  local AlysseAndroid = Instance.new("ScreenGui")
  local main = Instance.new("Frame")
  local sidebar = Instance.new("Frame")
@@ -1834,8 +1831,4 @@ function identifyexecutor()
      click(sidebar.player, function()
          stab(tabsfolder.player)
      end)
- end
- coroutine.wrap(WVUHU_fake_script)()
- else
-     warn("The Key System GUI was closed.")
 end
