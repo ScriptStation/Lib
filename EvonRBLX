@@ -1279,7 +1279,7 @@ local function loadKeyUI(callback)
 
 	--[[ Adless ]]--
 
-	--[[do
+	do
 		local paidFrame = tabs.premium;
 
 		local userInput = paidFrame.userInput;
@@ -1303,7 +1303,7 @@ local function loadKeyUI(callback)
 			enterDetails.Size = UDim2.new(0, enterDetails.TextBounds.X + 30, 0, 34);
 			passInput.Size = UDim2.new(1, -(enterDetails.TextBounds.X + 40), 0, 34);
 		end;
-	end]]
+	end
 
 	--[[ Languages ]]--
 
