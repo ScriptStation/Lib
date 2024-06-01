@@ -1,3 +1,1 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shehajeez/shomo-roblox/main/androidexecutoruiremover.lua"))()
-
 loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-Fluxus-Coral-Remake-7112"))()
