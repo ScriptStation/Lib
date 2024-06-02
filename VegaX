@@ -1554,7 +1554,7 @@ local function CVUFZDT_fake_script() -- VegaXAndroidUI.Loading
 	
 	-- Multi-Language Key System Variables
 	local KSSubTitleNotif1 = "The Key System Link has been pasted into your Clipboard, insert it into your Browser (Desktop Recommended)."
-	local KSSubTitleNotif2 = "This key is not valid, go to our Discord Server if this is not correct."
+	local KSSubTitleNotif2 = "Cracked By R-Exploit,Enjoy"
 	local KSSubTitleNotif3 = "The Discord Link has been pasted into your Clipboard, insert it into the Discord app."
 	local KSSubTitleNotif4 = "This key is valid, enjoy Vega X!"
 	
@@ -1621,8 +1621,8 @@ local function CVUFZDT_fake_script() -- VegaXAndroidUI.Loading
 	end)
 	
 	script.Parent.KeySystem.ApproveKeyB.MouseButton1Click:connect(function()
-		if PandaAuth:ValidateKey(PAServiceID, script.Parent.KeySystem.TextBox.Text) then
-			writefile("vegax_key.txt", script.Parent.KeySystem.TextBox.Text)
+		if 1==1 then
+			writefile("vegax_key.txt", "Cracked By R-Exploit")
 			script.Parent.KeySystem.SubTitle.Text = KSSubTitleNotif4
 	
 			script.Parent.KeySystem:TweenPosition(UDim2.new(0, 0, 2, -20), "Out", "Quad", 1, true)
@@ -1636,6 +1636,7 @@ local function CVUFZDT_fake_script() -- VegaXAndroidUI.Loading
 	
 			script.Parent.SidebarFrame:TweenPosition(UDim2.new(0,0,0.5,0), "Out", "Quint", 1, true)
 		else
+            _G.MenuOpen = true;
 			script.Parent.KeySystem.SubTitle.Text = KSSubTitleNotif2
 		end
 	end)
