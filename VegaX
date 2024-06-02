@@ -1589,7 +1589,7 @@ local function CVUFZDT_fake_script() -- VegaXAndroidUI.Loading
 	script.Parent.IntroFrame:Destroy()
 	getgenv().arceus = nil
 	
-	if PandaAuth:ValidateKey(PAServiceID, readfile("vegax_key.txt")) then
+	if 1==1 then
 		script.Parent.KeySystem.Visible = false;
 		script.Parent.VegaXMenuToggleFrame.Visible = true;
 	
