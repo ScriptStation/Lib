@@ -1,0 +1,12 @@
+if isHotel then
+    SaveManager:SetFolder("mspaint/doors/hotel")
+end
+if isMines then
+    SaveManager:SetFolder("mspaint/doors/mines")
+end
+if isBackdoor then
+    SaveManager:SetFolder("mspaint/doors/backdoor")
+end
+if isRooms then
+    SaveManager:SetFolder("mspaint/doors/rooms")
+end
